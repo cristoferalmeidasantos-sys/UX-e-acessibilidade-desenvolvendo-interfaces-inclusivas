@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Segurança Digital - Acessível</title>
+    <style>
+        /* RESET E CONFIGURAÇÕES DE ACESSIBILIDADE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Fundo escuro e letras amarelas/brancas para alto contraste */
+        body {
+            background-color: #121212;
+            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 24px; /* Tamanho base de fonte grande */
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* CABEÇALHO */
+        header {
+            border-bottom: 4px solid #FFD700;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #FFD700; /* Amarelo de alto contraste */
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* CONTROLES DE ACESSIBILIDADE */
+        .acessibilidade-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: #FFD700;
+            color: #000000;
+            border: 3px solid #FFFFFF;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        button:focus, button:hover {
+            outline: 4px solid #00FFFF;
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+
+        /* SEÇÕES E CARTÕES DE DICAS */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .dica-card {
+            background-color: #1E1E1E;
+            border: 3px solid #FFD700;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #FFD700;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        p, ul {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* ALERTA DE DESTAQUE */
+        .alerta {
+            background-color: #330000;
+            border: 3px solid #FF4D4D;
+            color: #FFCCCC;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* RODAPÉ */
+        footer {
+            border-top: 2px solid #FFD700;
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 1rem;
+            color: #CCCCCC;
+        }
+    </style>
+</head>
+<body>
+
+    <header role="banner">
+        <h1>Guia Prático de Segurança Digital</h1>
+        <p>Dicas simples para navegar na internet com total segurança.</p>
+
+        <div class="acessibilidade-bar" aria-label="Controles de Acessibilidade">
+            <button onclick="mudarTamanhoTexto(2)" aria-label="Aumentar tamanho do texto">A+ Aumentar Texto</button>
+            <button onclick="mudarTamanhoTexto(-2)" aria-label="Diminuir tamanho do texto">A- Diminuir Texto</button>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="dica-card">
+            <h2>1. Cuidado com Mensagens Suspeitas (Golpes)</h2>
+            <p>Bancos e órgãos do governo <strong>nunca</strong> pedem suas senhas por mensagem de texto ou WhatsApp.</p>
+            <ul>
+                <li>Não clique em links enviados por números desconhecidos.</li>
+                <li>Se receber uma mensagem urgente sobre um parente pedindo dinheiro, ligue diretamente para a pessoa antes de enviar qualquer valor.</li>
+            </ul>
+        </section>
+
+        <section class="dica-card">
+            <h2>2. Como Criar Senhas Seguras</h2>
+            <p>Evite usar datas de nascimento, nomes de netos ou sequências simples como "123456".</p>
+            <ul>
+                <li>Use frases curtas que só você conhece (Exemplo: <em>MeuCafeQuente2026!</em>).</li>
+                <li>Nunca anote senhas em papéis deixados perto do computador.</li>
+            </ul>
+        </section>
+
+        <section class="dica-card alerta" role="alert">
+            <h2> Atenção: Regra Ouro da Segurança</h2>
+            <p>Na dúvida, <strong>PARE e NÃO CLIQUE</strong>. Peça ajuda a alguém de sua confiança antes de preencher formulários ou fazer pagamentos na internet.</p>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p>Página desenvolvida com foco em acessibilidade visual e facilidade de leitura.</p>
+    </footer>
+
+    <script>
+        // Função simples em JavaScript para ajustar o tamanho da fonte da página
+        function mudarTamanhoTexto(delta) {
+            const body = document.body;
+            const style = window.getComputedStyle(body, null).getPropertyValue('font-size');
+            const currentSize = parseFloat(style);
+            body.style.fontSize = (currentSize + delta) + 'px';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E ACESSIBILIDADE
+   ========================================================================== */
+
+/* Ajuste box-sizing para facilitar o cálculo de tamanhos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fundo escuro (#121212) e texto claro (#FFFFFF) geram alto contraste,
+   reduzindo o cansaço visual e facilitando a leitura de quem tem baixa visão.
+*/
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px; /* Base ampla de texto */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   CABEÇALHO
+   ========================================================================== */
+
+header {
+    border-bottom: 4px solid #FFD700;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Titular em amarelo vibrante (#FFD700) para destaque imediato */
+h1 {
+    color: #FFD700;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   BARRA DE FERRAMENTAS DE ACESSIBILIDADE (BOTÕES)
+   ========================================================================== */
+
+.acessibilidade-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Garante que os botões se ajustem em telas menores */
+}
+
+/* Botões com bordas grossas e texto grande */
+button {
+    background-color: #FFD700;
+    color: #000000;
+    border: 3px solid #FFFFFF;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Destaque para quando o botão for selecionado pelo teclado ou mouse */
+button:focus, 
+button:hover {
+    outline: 4px solid #00FFFF; /* Contorno ciano brilhante para navegabilidade por teclado */
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL E CARTÕES DE DICAS
+   ========================================================================== */
+
+main {
+    max-width: 900px;
+    margin: 0 auto; /* Centraliza o conteúdo na tela */
+}
+
+/* Cartões com fundo ligeiramente mais claro que o fundo geral (#1E1E1E) */
+.dica-card {
+    background-color: #1E1E1E;
+    border: 3px solid #FFD700;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #FFD700;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+p, ul {
+    margin-bottom: 15px;
+}
+
+/* Listas com maior espaçamento interno para legibilidade */
+ul {
+    padding-left: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Cartão de Alerta (Destaque urgente) */
+.alerta {
+    background-color: #330000;
+    border: 3px solid #FF4D4D;
+    color: #FFCCCC;
+    padding: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.alerta h2 {
+    color: #FF4D4D;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+
+footer {
+    border-top: 2px solid #FFD700;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: #CCCCCC;
+}
