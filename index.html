@@ -12,28 +12,41 @@
             padding: 0;
         }
 
-        /* Fundo escuro e letras amarelas/brancas para alto contraste */
+        /* PALETA DE CORES: Verde Neon, Preto/Verde Radioativo e Cinza com Sombra */
+        :root {
+            --bg-color: #0d1110;           /* Preto com fundo verde radioativo suave */
+            --card-bg: #161c18;           /* Cinza muito escuro esverdeado */
+            --neon-green: #39ff14;        /* Verde Neon para títulos e destaques */
+            --neon-border: #00ff66;       /* Verde radioativo para bordas e botões */
+            --text-color: #f0f0f0;        /* Texto principal em branco suave */
+            --alert-bg: #3a0000;          /* Fundo vermelho escuro para alerta */
+            --alert-border: #ff3333;      /* Borda vermelho vivo para alerta */
+            --alert-text: #ffcccc;        /* Texto claro do alerta */
+            --shadow-color: rgba(0, 0, 0, 0.85); /* Sombra acentuada */
+        }
+
         body {
-            background-color: #121212;
-            color: #FFFFFF;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 24px; /* Tamanho base de fonte grande */
+            font-size: 24px;
             line-height: 1.6;
             padding: 20px;
         }
 
         /* CABEÇALHO */
         header {
-            border-bottom: 4px solid #FFD700;
+            border-bottom: 4px solid var(--neon-border);
             padding-bottom: 20px;
             margin-bottom: 30px;
             text-align: center;
         }
 
         h1 {
-            color: #FFD700; /* Amarelo de alto contraste */
+            color: var(--neon-green);
             font-size: 2.2rem;
             margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
         }
 
         /* CONTROLES DE ACESSIBILIDADE */
@@ -45,19 +58,21 @@
         }
 
         button {
-            background-color: #FFD700;
+            background-color: var(--neon-border);
             color: #000000;
-            border: 3px solid #FFFFFF;
+            border: 3px solid #ffffff;
             font-size: 1.2rem;
             font-weight: bold;
             padding: 12px 24px;
             cursor: pointer;
             border-radius: 8px;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: all 0.2s ease;
         }
 
         button:focus, button:hover {
-            outline: 4px solid #00FFFF;
-            background-color: #FFFFFF;
+            outline: 4px solid var(--neon-green);
+            background-color: #ffffff;
             color: #000000;
         }
 
@@ -68,15 +83,16 @@
         }
 
         .dica-card {
-            background-color: #1E1E1E;
-            border: 3px solid #FFD700;
+            background-color: var(--card-bg);
+            border: 3px solid var(--neon-border);
             border-radius: 12px;
             padding: 25px;
             margin-bottom: 30px;
+            box-shadow: 0 8px 16px var(--shadow-color);
         }
 
         h2 {
-            color: #FFD700;
+            color: var(--neon-green);
             font-size: 1.8rem;
             margin-bottom: 15px;
         }
@@ -93,24 +109,29 @@
             margin-bottom: 10px;
         }
 
-        /* ALERTA DE DESTAQUE */
+        /* ALERTA DE DESTAQUE (Mantido em vermelho) */
         .alerta {
-            background-color: #330000;
-            border: 3px solid #FF4D4D;
-            color: #FFCCCC;
+            background-color: var(--alert-bg);
+            border: 3px solid var(--alert-border);
+            color: var(--alert-text);
             padding: 20px;
             border-radius: 8px;
             font-weight: bold;
+            box-shadow: 0 8px 16px var(--shadow-color);
+        }
+
+        .alerta h2 {
+            color: #ff6666;
         }
 
         /* RODAPÉ */
         footer {
-            border-top: 2px solid #FFD700;
+            border-top: 2px solid var(--neon-border);
             margin-top: 40px;
             padding-top: 20px;
             text-align: center;
             font-size: 1rem;
-            color: #CCCCCC;
+            color: #aaaaaa;
         }
     </style>
 </head>
@@ -147,7 +168,7 @@
         </section>
 
         <section class="dica-card alerta" role="alert">
-            <h2> Atenção: Regra Ouro da Segurança</h2>
+            <h2>Atenção: Regra Ouro da Segurança</h2>
             <p>Na dúvida, <strong>PARE e NÃO CLIQUE</strong>. Peça ajuda a alguém de sua confiança antes de preencher formulários ou fazer pagamentos na internet.</p>
         </section>
 
@@ -169,3 +190,4 @@
 
 </body>
 </html>
+<link rel="stylesheet" href="style.css">
