@@ -1,21 +1,85 @@
-MIT License
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segurança Digital para Idosos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-Copyright (c) 2026 cristoferalmeidasantos-sys
+  <!-- Barra Acessibilidade / Lupa -->
+  <div class="top-bar">
+    <button id="btn-zoom" class="zoom-btn" onclick="toggleZoom()">🔍 Ativar Lupa / Aumentar Texto</button>
+  </div>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+  <header class="header">
+    <h1>GUIA DE SEGURANÇA ONLINE</h1>
+    <p class="subtitle">Proteja seus dados, seu dinheiro e navegue com tranquilidade!</p>
+  </header>
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+  <main class="container">
+    
+    <section class="card">
+      <h2>⚠️ Cuidado com Compras Online</h2>
+      <p>Sempre verifique se o site possui o ícone de um <strong>cadeado ao lado do endereço web</strong>. Nunca compre em sites desconhecidos recebidos por mensagem.</p>
+      <button class="action-btn" onclick="mostrarInfo('compras')">Ver Dicas de Compras</button>
+      <div id="info-compras" class="info-box hidden">
+        <ul>
+          <li>Desconfie de preços excessivamente baixos.</li>
+          <li>Prefira pagar com cartão virtual ou boleto.</li>
+          <li>Nunca informe senhas do cartão de crédito.</li>
+        </ul>
+      </div>
+    </section>
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+    <section class="card">
+      <h2>🚨 Golpes Mais Comuns</h2>
+      <p>Golpistas costumam se passar por bancos, parentes pedindo dinheiro ou empresas de entregas exigindo pagamentos.</p>
+      <button class="action-btn" onclick="mostrarInfo('golpes')">Conhecer os Golpes</button>
+      <div id="info-golpes" class="info-box hidden">
+        <ul>
+          <li><strong>Golpe do WhatsApp:</strong> Se um familiar pedir dinheiro por número novo, ligue no número antigo para confirmar.</li>
+          <li><strong>Falso Banco:</strong> O banco NUNCA liga pedindo para transferir dinheiro ou digitar senhas.</li>
+          <li><strong>Links Suspeitos:</strong> Não clique em links recebidos por SMS de fontes desconhecidas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🛡️ Dicas Rápidas de Proteção</h2>
+      <p>Pequenos hábitos diários garantem uma navegação segura para você e sua família.</p>
+      <button class="action-btn" onclick="mostrarInfo('cuidados')">Regras de Ouro</button>
+      <div id="info-cuidados" class="info-box hidden">
+        <ul>
+          <li>Não anote senhas no celular sem proteção.</li>
+          <li>Não use a mesma senha para tudo.</li>
+          <li>Em caso de dúvida, peça ajuda a uma pessoa de confiança.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Navegue com calma. Na dúvida, NÃO CLIQUE!</p>
+  </footer>
+
+  <script>
+    function toggleZoom() {
+      document.body.classList.toggle('zoomed');
+      const btn = document.getElementById('btn-zoom');
+      if (document.body.classList.contains('zoomed')) {
+        btn.innerText = "🔍 Diminuir Texto";
+      } else {
+        btn.innerText = "🔍 Ativar Lupa / Aumentar Texto";
+      }
+    }
+
+    function mostrarInfo(id) {
+      const el = document.getElementById('info-' + id);
+      el.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
